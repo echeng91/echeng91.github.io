@@ -6,15 +6,15 @@
 <script>
 
 jQuery.githubUser = function(username, callback) {
-   jQuery.getJSON('https://api.github.com/users/'+echeng91+'/repos?callback=?',callback)
+   jQuery.getJSON('https://api.github.com/users/'+username+'/repos?callback=?',callback)
 }
 
 //this method
 jQuery.fn.loadRepositories = function(username) {
-    this.html("<span>Querying GitHub for " + echeng91 +"'s repositories...</span>");
+    this.html("<span>Querying GitHub for " + username +"'s repositories...</span>");
 
     var target = this;
-    $.githubUser(echeng91, function(data) {
+    $.githubUser(username, function(data) {
         var repos = data.data; // JSON Parsing
         sortByName(repos);    
 
@@ -60,7 +60,7 @@ jQuery.fn.loadRepositories = function(username) {
 </script>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+ <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -81,10 +81,6 @@ jQuery.fn.loadRepositories = function(username) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
-<p/>    
-    <a href="github"></a><h1>My GitHub Projects</h1>  
-    <div id="my-github-projects"></div>
 
 </body>
 </html> 
