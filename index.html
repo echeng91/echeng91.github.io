@@ -6,12 +6,12 @@
 <script>
 
 jQuery.githubUser = function(username, callback) {
-   jQuery.getJSON('https://api.github.com/users/'+username+'/repos?callback=?',callback)
+   jQuery.getJSON('https://api.github.com/users/'+echeng91+'/repos?callback=?',callback)
 }
 
 //this method
 jQuery.fn.loadRepositories = function(username) {
-    this.html("<span>Querying GitHub for " + username +"'s repositories...</span>");
+    this.html("<span>Querying GitHub for " + echeng91 +"'s repositories...</span>");
 
     var target = this;
     $.githubUser(username, function(data) {
@@ -69,7 +69,7 @@ jQuery.fn.loadRepositories = function(username) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Dave Wolf, PMP</a>
+          <a class="navbar-brand" href="#">Eric Cheng</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
